@@ -42,7 +42,6 @@ def new_post():
         form=form
     )
 
-
 @app.route('/post/<int:id>', methods=['GET', 'POST'])
 @login_required
 def post(id):
@@ -125,7 +124,6 @@ def _load_cache():
 def _save_cache(cache):
     if cache.has_state_changed:
         session['token_cache'] = cache.serialize()
-
 
 def _build_msal_app(cache=None, authority=None):
     # Create and return a Confidential Client Application from msal
